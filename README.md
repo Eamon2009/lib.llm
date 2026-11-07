@@ -1,4 +1,4 @@
-<h1 align="center"> lib.llm - Open Source</h1>
+<h1 align="center"> Lib.llm - Open Source</h1>
 
 ### The Repository
 This repository is where the lib.llm project is developed. It is LLM training in C++17 with no frameworks. The core is roughly 1,000 lines of dependency-free C++ spread across `main.cpp`, `config/config.h`, and `include/*.h`.
@@ -9,7 +9,7 @@ The implementation is a decoder-only GPT with custom tensors, embeddings, multi-
 
 This is not a framework. It is a reference implementation: the kind of thing you build once to prove to yourself that you understand every operation from the matrix multiplications up to the cross-entropy loss, and then keep around because it is genuinely useful for training small models on a laptop CPU without fighting a Python environment.
 
-This source code is available to everyone under the GPL-3.0 license.
+This [source code](_https://github.com/Eamon2009/lib.llm/tags) is available to everyone under the GPL-3.0 license.
 
 ## lib.llm
 
@@ -59,38 +59,8 @@ Once you have a checkpoint:
 Debugging tip: swap `-O3` for `-g` when compiling if you want to step through `include/backward.h` or `include/gpt.h` in a debugger. The manual backward pass is much easier to follow one breakpoint at a time.
 
 ### Example Output
-
-```text
-[DATA]  Total tokens : 3521179
-[DATA]  Train tokens : 3169061
-[DATA]  Val tokens   : 352118
-  +------------------------------------------+------------------------------------------+
-  | LLM Architecture                                                                    |
-  +------------------------------------------+------------------------------------------+
-  | Max Context Length   : 24                | Vocab Size (BPE)     : 2056              |
-  | Number of Layers     : 6                 | Attention Heads      : 6                 |
-  | Embedding Channels   : 128               | Total Parameters     : 1712904           |
-  | Repetition Penalty   : 500               | Repetition Window    : 500               |
-  +------------------------------------------+------------------------------------------+
-
-  +-------------------------------------------------------------------------------------+
-  | Host Hardware Specs                                                                 |
-  +-------------------------------------------------------------------------------------+
-  | Host CPU Device      : AMD Ryzen 5 PRO 3500U w/ Radeon...                           |
-  | Host RAM (Total)     : 6045 MB                                                      |
-  +-------------------------------------------------------------------------------------+
-
-step 1/20000 (0.01%) | train loss 7.647731 | val loss 7.663259 | lr 3.00e-07 | 960.52 ms | 199 tok/s | ram 70.9 MB
-step 2/20000 (0.01%) | train loss 7.637784 | val loss 7.663259 | lr 6.00e-07 | 1243.27 ms | 154 tok/s | ram 70.9 MB
-step 3/20000 (0.01%) | train loss 7.658248 | val loss 7.663259 | lr 9.00e-07 | 994.39 ms | 193 tok/s | ram 70.9 MB
-step 4/20000 (0.02%) | train loss 7.643033 | val loss 7.663259 | lr 1.20e-06 | 1025.49 ms | 187 tok/s | ram 70.9 MB
-step 5/20000 (0.03%) | train loss 7.623671 | val loss 7.663259 | lr 1.50e-06 | 1013.43 ms | 189 tok/s | ram 71.0 MB
-[SAVE]  Weights written to best_model.bin
-step 6/20000 (0.03%) | train loss 7.665278 | val loss 7.654684* | lr 1.80e-06 | 1042.40 ms | 184 tok/s | ram 71.0 MB
-generating:
-What sall I hae a sight of the king's crow
-...
-```
+---
+<img width="1465" height="201" alt="image" src="https://github.com/user-attachments/assets/78a7ef98-5042-43c9-9849-8bd4eba4e6c5" />
 
 ### Memory Tracking
 
